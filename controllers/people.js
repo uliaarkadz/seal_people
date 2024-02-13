@@ -36,9 +36,7 @@ router.delete("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    res.json(await People.findByIdAndUpdate(req.params.id, req.body), {
-      new: true,
-    });
+    res.json(await People.findByIdAndUpdate(req.params.id, req.body));
   } catch (err) {
     res.status(400).json(err);
   }
